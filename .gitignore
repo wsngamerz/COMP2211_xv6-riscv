@@ -16,3 +16,5 @@ kernel/kernel
 user/usys.S
 .gdbinit
 .vscode/*.log
+xv6_tools.simg
+xv6-tools_buildx-latest.sif
