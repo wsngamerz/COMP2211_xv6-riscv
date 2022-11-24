@@ -27,6 +27,9 @@ memory_block_t* allocate_block(int size, memory_block_t* next) {
   block->is_free = 0;
   block->size = size;
   block->next = (next) ? next : NULL;
+
+  // set the new head of the list of blocks to the address of this block
+  block_head = block;
   return block;
 }
 
@@ -39,7 +42,6 @@ memory_block_t* find_block(int size) {
   // loop through to find a block that is free and has enough space
   while (current && !(current->is_free && current->size >= size))
     current = current->next;
-
   return current;
 }
 
